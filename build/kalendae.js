@@ -925,4 +925,9 @@ moment.fn.yearDay = function (input) {
 
 today = moment().stripTime();
 
+// function to convert timezones
+moment.fn.timezoneOffset = function(zone) {
+  var diff = this.zone() + (zone * 60);
+  return this.clone().add('minutes', diff);
+};
 })();
